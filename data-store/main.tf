@@ -23,11 +23,6 @@ resource "digitalocean_database_db" "jun_sisters_wiki_db" {
   name       = var.pg_wiki_db_name
 }
 
-resource "digitalocean_database_db" "jun_sisters_wiki_db" {
-  cluster_id = digitalocean_database_cluster.jun_sisters_wiki_db_cluster.id
-  name       = "terraform_backend"
-}
-
 resource "digitalocean_database_firewall" "jun_sisters_wiki_db_fw" {
   cluster_id = digitalocean_database_cluster.jun_sisters_wiki_db_cluster.id
 

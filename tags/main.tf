@@ -1,8 +1,5 @@
 # DO tags
 # largely used for identification and firewall rules
-provider "digitalocean" {
-}
-
 resource "digitalocean_tag" "k8s_cluster" {
   name = "k8s_cluster"
 }

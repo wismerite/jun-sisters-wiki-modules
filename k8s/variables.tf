@@ -32,6 +32,6 @@ variable "k8s_node_size" {
 }
 
 variable "k8s_tags" {
-    description = "how large is each node?"
-    type = string
+    description = "tags"
+    type = list
 }

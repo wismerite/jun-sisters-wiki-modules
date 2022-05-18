@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    digitalocean = {
+      source  = "digitalocean/digitalocean"
+      version = "~> 2.0"
+    }
+  }
+}
+
 resource "digitalocean_database_cluster" "jun_sisters_wiki_db_cluster" {
   name       = var.pg_name
   engine     = "pg"

@@ -1,5 +1,14 @@
 # not using this for now to reduce initial complexity during development
 # Firewalls
+# terraform {
+#   required_providers {
+#     digitalocean = {
+#       source  = "digitalocean/digitalocean"
+#       version = "~> 2.0"
+#     }
+#   }
+# }
+
 # resource "digitalocean_firewall" "jun_sisters_wiki_web_fw" {
 #     name = "${var.name_prefix}-${var.env}-web_fw"
 #     droplet_ids = [digitalocean_droplet.jun_sisters_wiki_single_node.id]

@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    digitalocean = {
+      source  = "digitalocean/digitalocean"
+      version = "~> 2.0"
+    }
+  }
+}
+
 data "digitalocean_kubernetes_versions" "k8s_version" {
   version_prefix = "1.20."
 }

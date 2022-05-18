@@ -7,9 +7,7 @@ terraform {
   }
 }
 
-data "digitalocean_kubernetes_versions" "k8s_version" {
-  version_prefix = "1.20."
-}
+data "digitalocean_kubernetes_versions" "k8s_version" {}
 
 resource "digitalocean_kubernetes_cluster" "k8s_cluster" {
   name   = var.k8s_name

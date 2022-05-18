@@ -1,3 +1,8 @@
+## vars for easy copypasta to modules
+# vpc_name
+# vpc_region
+# vpc_ip_range
+
 variable "vpc_name" {
     description = "name of the DO vpc"
     type = string

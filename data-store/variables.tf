@@ -1,3 +1,13 @@
+## var names for easy copypasta to a module
+# pg_name
+# pg_region
+# pg_node_count
+# pg_node_size
+# pg_vpc_id
+# pg_tags
+# pg_wiki_db_name
+# k8s_cluster_id
+
 variable "pg_name" {
     description = "name of the pge cluster"
     type = string

@@ -26,5 +26,4 @@ resource "digitalocean_database_firewall" "jun_sisters_wiki_db_fw" {
     type  = "k8s"
     value = var.k8s_cluster_id
   }
-
 }

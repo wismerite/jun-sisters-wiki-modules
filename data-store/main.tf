@@ -31,3 +31,8 @@ resource "digitalocean_database_firewall" "jun_sisters_wiki_db_fw" {
     value = var.k8s_cluster_id
   }
 }
+
+resource "digitalocean_database_user" "jun_sisters_wiki_db_user" {
+  cluster_id = digitalocean_database_cluster.jun_sisters_wiki_db_cluster.id
+  name       = "jswiki"
+}

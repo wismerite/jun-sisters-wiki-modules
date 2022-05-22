@@ -14,6 +14,7 @@ resource "digitalocean_kubernetes_cluster" "k8s_cluster" {
   region = var.k8s_region
   auto_upgrade = true
   version      = data.digitalocean_kubernetes_versions.k8s_version.latest_version
+  vpc_uuid = var.k8s_vpc
 
   maintenance_policy {
     start_time  = "04:00"

@@ -36,3 +36,7 @@ resource "digitalocean_database_user" "jun_sisters_wiki_db_user" {
   cluster_id = digitalocean_database_cluster.jun_sisters_wiki_db_cluster.id
   name       = "jswiki"
 }
+
+data "digitalocean_database_ca" "ca" {
+  cluster_id = digitalocean_database_cluster.jun_sisters_wiki_db_cluster.id
+}

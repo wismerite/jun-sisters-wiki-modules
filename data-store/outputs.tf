@@ -32,6 +32,7 @@ output "password" {
 }
 
 output "ca_certificate" {
-    data.digitalocean_database_ca.ca.certificate
+    description = "ca cert for ssl connections to the db"
+    value = data.digitalocean_database_ca.ca.certificate
 }
 

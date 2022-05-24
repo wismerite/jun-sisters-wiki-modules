@@ -27,8 +27,8 @@ resource "digitalocean_database_firewall" "jun_sisters_wiki_db_fw" {
   cluster_id = digitalocean_database_cluster.jun_sisters_wiki_db_cluster.id
 
   rule {
-    type  = "k8s"
-    value = var.k8s_cluster_id
+    type  = "ip_addr"
+    value = var.vpc_ip_range
   }
 }
 

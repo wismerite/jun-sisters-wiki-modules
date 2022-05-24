@@ -7,6 +7,7 @@
 # pg_tags
 # pg_wiki_db_name
 # k8s_cluster_id
+# vpc_ip_range
 
 variable "pg_name" {
     description = "name of the pge cluster"
@@ -44,6 +45,11 @@ variable "pg_wiki_db_name" {
 }
 
 variable "k8s_cluster_id" {
+    description = "id of the k8s cluster for db firewall"
+    type = string
+}
+
+variable "vpc_ip_range" {
     description = "id of the k8s cluster for db firewall"
     type = string
 }

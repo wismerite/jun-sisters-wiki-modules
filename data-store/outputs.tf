@@ -8,21 +8,25 @@ output "urn" {
     value = digitalocean_database_cluster.jun_sisters_wiki_db_cluster.urn
 }
 
-# output "uri" {
-#     description = "conn string for pge cluster"
-#     value = digitalocean_database_cluster.jun_sisters_wiki_db_cluster.uri
-# }
+output "private_uri" {
+    description = "conn string for pge cluster, to be used for tf state"
+    value = digitalocean_database_cluster.jun_sisters_wiki_db_cluster.private_uri
+    sensitive = true
+}
 
-# output "private_uri" {
-#     description = "conn string for pge cluster, to be used for tf state"
-#     value = digitalocean_database_cluster.jun_sisters_wiki_db_cluster.private_uri
-#     sensitive = true
-# }
+output "port" {
+    description = "db cluster port"
+    value = digitalocean_database_cluster.jun_sisters_wiki_db_cluster.port
+}
+
+output "db" {
+    description = "name of the db for the wiki"
+    value = digitalocean_database_db.jun_sisters_wiki_db.name
+}
 
 output "username" {
     description = "username for the db user for the wiki"
     value = digitalocean_database_user.jun_sisters_wiki_db_user.name
-    sensitive = true
 }
 
 output "password" {

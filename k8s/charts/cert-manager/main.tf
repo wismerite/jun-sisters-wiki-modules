@@ -15,7 +15,7 @@ resource "helm_release" "cert-manager" {
 
 resource "kubernetes_manifest" "clusterissuer_letsencrypt_prod" {
   manifest = {
-    "apiVersion" = "cert-manager.io/v1"
+    "apiVersion" = "cert-manager.io/v1alpha2"
     "kind" = "ClusterIssuer"
     "metadata" = {
       "name" = "${var.service_name}-ci"

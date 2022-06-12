@@ -1,7 +1,7 @@
 variable "db_pw" {
-    type = 
+    type = string
 }
 
 variable "db_pw_secret_name" {
-    type = 
+    type = string
 }

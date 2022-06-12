@@ -13,6 +13,12 @@ resource "helm_release" "jswiki" {
 
     set {
         type = "string"
+        name = "fullNameOverride"
+        value = var.service_name
+    }
+
+    set {
+        type = "string"
         name = "postgresql.ssl"
         value = true
     }

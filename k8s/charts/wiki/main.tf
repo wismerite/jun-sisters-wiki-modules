@@ -50,11 +50,11 @@ resource "helm_release" "jswiki" {
         value = var.db_username
     }
 
-    # postgresql.postgresqlPassword is the db password for the db user
+    # postgresql.existingSecret is where the db password for the db user lives
     set {
         type = "string"
-        name = "postgresql.postgresqlPassword"
-        value = var.db_password
+        name = "postgresql.existingSecret"
+        value = var.db_password_secret
     }
 
     # DO's ca cert for db connects
@@ -64,3 +64,4 @@ resource "helm_release" "jswiki" {
         value = var.db_ca
     }
 }
+

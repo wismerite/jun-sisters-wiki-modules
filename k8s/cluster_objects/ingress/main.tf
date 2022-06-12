@@ -1,7 +1,7 @@
 resource "kubernetes_ingress_v1" "example_ingress" {
   metadata {
     name = "${var.service_name}-ingress"
-    annotations {
+    annotations = {
       cert-manager.io/cluster-issuer = "jun-sisters-wiki-ci"
     }
   }

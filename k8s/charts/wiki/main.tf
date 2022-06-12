@@ -13,7 +13,7 @@ resource "helm_release" "jswiki" {
 
     set {
         type = "string"
-        name = "fullNameOverride"
+        name = "fullnameOverride"
         value = var.service_name
     }
 

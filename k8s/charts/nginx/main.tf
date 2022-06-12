@@ -5,20 +5,20 @@ resource "helm_release" "nginx" {
     # this version is fairly arbitrary, it's just what was in the 
     #   example ella looked at
     version    = "4.0.13"
-
     lint = true
 
-    values = [
-        "${file("values.yaml")}"
-    ]
+    set {
+        name = "controller.replicaCount"
+        value = var.lb_replicas
+    }
 
     set {
-        name  = "resources.requests.cpu"
+        name  = "controller.resources.requests.cpu"
         value = var.lb_cpu
     }
 
     set {
-        name  = "resources.requests.memory"
+        name  = "controller.resources.requests.memory"
         value = var.lb_memory
     }
 }

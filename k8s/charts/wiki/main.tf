@@ -5,14 +5,21 @@ resource "helm_release" "jswiki" {
 
     lint = true
 
-    values = [
-        "${file("values.yaml")}"
-    ]
-
     set {
         type = "string"
         name = "nameOverride"
         value = var.service_name
+    }
+
+    set {
+        type = "string"
+        name = "postgresql.ssl"
+        value = true
+    }
+
+    set {
+        name = "postgresql.enabled"
+        value = false
     }
 
     # postgresql.postgresqlHost is private connection string to db cluster
@@ -28,7 +35,7 @@ resource "helm_release" "jswiki" {
         name = "postgresql.postgresqlPort"
         value = var.db_port
     }
-    
+
     # postgresql.postgresqlDatabase db for jswiki app
     set {
         type = "string"

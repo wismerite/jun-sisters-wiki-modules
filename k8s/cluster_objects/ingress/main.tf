@@ -10,11 +10,12 @@ resource "kubernetes_ingress_v1" "example_ingress" {
     ingress_class_name = "nginx"
     tls {
       hosts = [
-        "wiki.jun-sisters.gay"
+        var.service_fqdn
       ]
       secret_name = "${var.service_name}-cert-fgrtd"
     }
     rule {
+      host = var.service_fqdn
       http {
         path {
           path = "/"

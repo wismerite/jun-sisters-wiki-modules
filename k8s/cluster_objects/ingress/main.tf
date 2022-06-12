@@ -12,7 +12,7 @@ resource "kubernetes_ingress_v1" "example_ingress" {
       hosts = [
         "wiki.jun-sisters.gay"
       ]
-      secret_name = "${var.service_name}-cert"
+      secret_name = "${var.service_name}-cert-fgrtd"
     }
     rule {
       http {

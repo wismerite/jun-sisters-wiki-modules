@@ -63,5 +63,12 @@ resource "helm_release" "jswiki" {
         name = "postgresql.ca"
         value = var.db_ca
     }
+
+    # jswiki's ingress is weird and hard to configure/possibly broken 
+    set {
+        type = "string"
+        name = "ingress.enabled"
+        value = false
+    }
 }
 

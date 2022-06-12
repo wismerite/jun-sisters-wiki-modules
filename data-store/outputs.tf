@@ -8,9 +8,9 @@ output "urn" {
     value = digitalocean_database_cluster.jun_sisters_wiki_db_cluster.urn
 }
 
-output "private_uri" {
+output "private_host" {
     description = "conn string for pge cluster, to be used for tf state"
-    value = digitalocean_database_cluster.jun_sisters_wiki_db_cluster.private_uri
+    value = digitalocean_database_cluster.jun_sisters_wiki_db_cluster.private_host
     sensitive = true
 }
 

@@ -3,6 +3,7 @@ resource "kubernetes_ingress_v1" "example_ingress" {
     name = "${var.service_name}-ingress"
     annotations = {
       "cert-manager.io/cluster-issuer" = "jun-sisters-wiki-ci"
+      "nginx.ingress.kubernetes.io/permanent-redirect" = "https://$host$requesturi"
     }
   }
 

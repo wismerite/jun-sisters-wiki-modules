@@ -15,12 +15,10 @@ resource "helm_release" "nginx" {
     set {
         name  = "resources.requests.cpu"
         value = var.lb_cpu
-        type = number
     }
 
     set {
         name  = "resources.requests.memory"
         value = var.lb_memory
-        type = number
     }
 }

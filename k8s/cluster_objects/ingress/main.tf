@@ -9,7 +9,7 @@ resource "kubernetes_ingress_v1" "example_ingress" {
       http {
         path {
           path = "/"
-          pathType = "Prefix"
+          path_type = "Prefix"
           backend {
             service {
               name = var.service_name

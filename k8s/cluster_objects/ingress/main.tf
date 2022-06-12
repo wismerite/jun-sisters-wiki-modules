@@ -12,7 +12,7 @@ resource "kubernetes_ingress_v1" "example_ingress" {
       hosts = [
         var.service_fqdn
       ]
-      secret_name = "${var.service_name}-cert-fgrtd"
+      secret_name = "${var.service_name}-cert"
     }
     rule {
       host = var.service_fqdn

@@ -9,6 +9,12 @@ resource "helm_release" "jswiki" {
         "${file("values.yaml")}"
     ]
 
+    set {
+        type = "string"
+        name = "nameOverride"
+        value = var.service_name
+    }
+
     # postgresql.postgresqlHost is private connection string to db cluster
     set {
         type = "string"

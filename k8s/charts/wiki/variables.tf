@@ -1,3 +1,8 @@
+variable "service_name" {
+  description = "k8s service name wiki runs as"
+  type = string
+}
+
 variable "replicas" {
   description = "number of jswiki pods we want"
   type = number

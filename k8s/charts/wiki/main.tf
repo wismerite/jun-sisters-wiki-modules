@@ -27,7 +27,8 @@ resource "helm_release" "jswiki" {
         type = "string"
         name = "postgresql.postgresqlPort"
         value = var.db_port
-
+    }
+    
     # postgresql.postgresqlDatabase db for jswiki app
     set {
         type = "string"

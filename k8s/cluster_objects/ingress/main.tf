@@ -5,6 +5,12 @@ resource "kubernetes_ingress_v1" "example_ingress" {
 
   spec {
     ingress_class_name = "nginx"
+    tls {
+      hosts = [
+        "wiki.jun-sisters.gay"
+      ]
+      secret_name = "${var.service_name}-cert"
+    }
     rule {
       http {
         path {
